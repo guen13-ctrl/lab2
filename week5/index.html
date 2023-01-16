@@ -99,12 +99,54 @@ and is wrapped around the whole page content, except for the footer in this exam
       <h4><b>Dawn Qoute's</b></h4>
       <p>The most precious resource we all have is time. Don't be indecisive. 
 	   Pag Jco or Krispy Kreme... Jco agad.</p>
+	   
+	   
+	   	<!-- Javascript --> 
+<button onclick="displayDate()">Click to see the date and time today</button>
+
+<script>
+function displayDate() {
+  document.getElementById("demo").innerHTML = Date();
+}
+</script>
+
+
+<p id="demo"></p>
+
+<p id="demo"></p>
+
+<script>
+let day;
+switch (new Date().getDay()) {
+  case 0:
+    day = "Sunday";
+    break;
+  case 1:
+    day = "Monday";
+    break;
+  case 2:
+    day = "Tuesday";
+    break;
+  case 3:
+    day = "Wednesday";
+    break;
+  case 4:
+    day = "Thursday";
+    break;
+  case 5:
+    day = "Friday";
+    break;
+  case  6:
+    day = "Saturday";
+}
+document.getElementById("demo").innerHTML = "Today is " + day;
+</script>
     </div>
   </div><hr>
   
  
   <hr> 
-  
+    
 <!-- END Introduction Menu -->
 </div>
 
@@ -167,6 +209,10 @@ and is wrapped around the whole page content, except for the footer in this exam
 	<a href="https://www.instagram.com/kryingdwarnessy/" target="_blank" i class="fa fa-instagram w3-hover-opacity"></i></a>
 	<a href="https://twitter.com/dawnfairy13" target="_blank" i class="fa fa-twitter w3-hover-opacity"></i><a/>
 	<p> check out my social media ! </p>
+	
+
+
+
 </footer>
 
 </body>
