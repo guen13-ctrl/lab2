@@ -26,15 +26,11 @@ $result = $conn->query($sql);
 if ($result->num_rows > 0) {
 	echo "<h1>Guests Log</h1>";
     // output data of each row
-    while($row = $result->fetch_assoc()) {
-        echo 
-		"id: ". $row["id"]. 
-		" - Name: ". $row["name"]. 
-		" - Email: ". $row["email"]. 
-		" - Comment: ". $row["comment"]. 
-		"<br>";
-    }
-} else {
+   while($row = $result->fetch_assoc()) {
+               echo "<br> Name: " . $row["name"]. " - Email: " . $row["email"]. " - Website" . $row["website"].
+               echo "<br> Name: " . $row["name"]. " - Email: " . $row["email"]. " - Website: " . $row["website"].
+               " - Comment: " . $row["comment"]. " - Gender: " . $row["gender"]. "<br>";
+             }} else {
     echo "0 results";
 }
 
