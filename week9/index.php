@@ -359,32 +359,48 @@ echo $gender;
 
 <?php
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") 
-{
-	$servername = "192.168.150.213";
-	$username = "webprogmi211";
-	$password = "j@zzyAngle30";
-	$dbname = "webprogmi211";
-	
-	// Create connection
-	$conn = new mysqli($servername, $username, $password, $dbname);
-	// Check connection
-	if ($conn->connect_error) {
-	die("Connection failed: " . $conn->connect_error);
-	}
-	
-	$sql = "INSERT INTO gbalimodian_MyGuests (name, email, website,comment,gender,reg_date)
-	VALUES ('$name', '', '$email')";
-	
-	if ($conn->query($sql) === TRUE) {
-	echo "New record created successfully";
-	} else {
-	echo "Error: " . $sql . "<br>" . $conn->error;
-	}
-	
-	$conn->close();
-}
-?>
+        if ($_SERVER["REQUEST_METHOD"] == "POST") 
+        {
+          $servername = "192.168.150.213";
+          $username = "webprogmi211";
+          $password = "j@zzyAngle30";
+          $dbname = "webprogmi211";
+          
+          // Create connection
+          $conn = new mysqli($servername, $username, $password, $dbname);
+          // Check connection
+          if ($conn->connect_error) {
+            die("Connection failed: " . $conn->connect_error);
+          }
+
+          // sql to create table
+          $sql = "CREATE TABLE gbalimodian_MyGuests (
+            id VARCHAR(30) NOT NULL,
+            name VARCHAR(30) NOT NULL,
+            email VARCHAR(50) NOT NULL,
+            website VARCHAR(30),
+            comment TEXT(500),
+            gender VARCHAR(10) NOT NULL
+            )";
+            
+          if ($conn->query($sql) === TRUE) {
+            echo "Table gbalimodian_MyGuests created successfully";
+          } else {
+            echo "Error creating table: " . $conn->error;
+          }
+          
+          $sql = "INSERT INTO gbalimodian_MyGuests (id, name, email, website, comment, gender)
+          VALUES ('$id','$name', '$email', '$website', '$comment', '$gender')";
+          
+          if ($conn->query($sql) === TRUE) {
+            echo "New record created successfully";
+          } else {
+            echo "Error: " . $sql . "<br>" . $conn->error;
+          }
+          
+          $conn->close();
+        }
+        ?>        
 
 
 
