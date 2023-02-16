@@ -8,9 +8,9 @@
 </div>
 
 <?php
-$servername = "localhost";
+$servername = "192.168.150.213";
 $username = "webprogmi211";
-$password = "webprogmi211";
+$password = "j@zzyAngle30";
 $dbname = "webprogmi211";
 
 // Create connection
@@ -20,7 +20,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "SELECT id, name, email, comment FROM gbalimodian_MyGuests";
+$sql = "SELECT name, email, website, comment, gender FROM gbalimodian_MyGuests";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
