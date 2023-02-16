@@ -375,7 +375,6 @@ echo $gender;
 
           // sql to create table
           $sql = "CREATE TABLE gbalimodian_MyGuests (
-            id VARCHAR(30) NOT NULL,
             name VARCHAR(30) NOT NULL,
             email VARCHAR(50) NOT NULL,
             website VARCHAR(30),
@@ -389,8 +388,8 @@ echo $gender;
             echo "Error creating table: " . $conn->error;
           }
           
-          $sql = "INSERT INTO gbalimodian_MyGuests (id, name, email, website, comment, gender)
-          VALUES ('$id','$name', '$email', '$website', '$comment', '$gender')";
+          $sql = "INSERT INTO gbalimodian_MyGuests (name, email, website, comment, gender)
+          VALUES ('$name', '$email', '$website', '$comment', '$gender')";
           
           if ($conn->query($sql) === TRUE) {
             echo "New record created successfully";
