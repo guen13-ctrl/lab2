@@ -361,9 +361,9 @@ echo $gender;
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") 
 {
-	$servername = "localhost";
+	$servername = "192.168.150.213";
 	$username = "webprogmi211";
-	$password = "webprogmi211";
+	$password = "j@zzyAngle30";
 	$dbname = "webprogmi211";
 	
 	// Create connection
@@ -373,7 +373,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
 	die("Connection failed: " . $conn->connect_error);
 	}
 	
-	$sql = "INSERT INTO MyGuests (firstname, lastname, email)
+	$sql = "INSERT INTO MyGuests (name, email, website,comment,gender,reg_date)
 	VALUES ('$name', '', '$email')";
 	
 	if ($conn->query($sql) === TRUE) {
